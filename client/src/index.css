@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Portfolio specific colors */
+  --navy: hsl(221, 39%, 11%);
+  --slate-blue: hsl(217, 19%, 35%);
+  --electric-blue: hsl(219, 91%, 59%);
+  --vibrant-purple: hsl(259, 72%, 56%);
+  --emerald: hsl(158, 64%, 52%);
+  --warm-orange: hsl(39, 85%, 59%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--slate-blue) 100%);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-2 shadow-2xl;
+  }
+
+  .skill-bar {
+    @apply transition-all duration-1000 ease-in-out;
+  }
+
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .bounce-subtle {
+    animation: bounceSubtle 2s infinite;
+  }
+  /* ****************** */
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 3s infinite;
+  }
+
+  .animate-float-reverse {
+    animation: floatReverse 8s ease-in-out infinite;
+  }
+
+  .animate-twinkle {
+    animation: twinkle 4s ease-in-out infinite;
+  }
+  /* 88888888888888888888 */
+
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .fade-in-left {
+    animation: fadeInLeft 0.8s ease-out;
+  }
+
+  .fade-in-right {
+    animation: fadeInRight 0.8s ease-out;
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-20px); 
+  }
+}
+
+@keyframes bounceSubtle {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+@keyframes fadeInUp {
+  0% { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fadeInLeft {
+  0% { 
+    opacity: 0; 
+    transform: translateX(-30px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
+@keyframes fadeInRight {
+  0% { 
+    opacity: 0; 
+    transform: translateX(30px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
+/* Custom utilities */
+.text-navy { color: var(--navy); }
+.text-slate-blue { color: var(--slate-blue); }
+.text-electric-blue { color: var(--electric-blue); }
+.text-vibrant-purple { color: var(--vibrant-purple); }
+.text-emerald { color: var(--emerald); }
+.text-warm-orange { color: var(--warm-orange); }
+
+.bg-navy { background-color: var(--navy); }
+.bg-slate-blue { background-color: var(--slate-blue); }
+.bg-electric-blue { background-color: var(--electric-blue); }
+.bg-vibrant-purple { background-color: var(--vibrant-purple); }
+.bg-emerald { background-color: var(--emerald); }
+.bg-warm-orange { background-color: var(--warm-orange); }
+
+.border-navy { border-color: var(--navy); }
+.border-electric-blue { border-color: var(--electric-blue); }
+.border-vibrant-purple { border-color: var(--vibrant-purple); }
+.border-emerald { border-color: var(--emerald); }
+.border-warm-orange { border-color: var(--warm-orange); }
+
+/* Additional keyframes for hero effects */
+@keyframes floatReverse {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(15px) rotate(180deg); 
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
