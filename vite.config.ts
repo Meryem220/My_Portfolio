@@ -25,7 +25,8 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+     outDir: path.resolve(import.meta.dirname, "docs"), // 👈 changed for GitHub Pages
+    // outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
   server: {
@@ -34,4 +35,5 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
+  base: "./", // 👈 important for relative paths on GitHub Pages
 });
